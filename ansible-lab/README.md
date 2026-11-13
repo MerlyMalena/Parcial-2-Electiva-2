@@ -23,4 +23,4 @@ ansible-playbook -i inventory.ini playbook.yml
 
 ## Captura de la ejecución exitosa del playbook
 
-![Ejecución exitosa del playbook](evidencias/ejecucion-playbook.png)
+![Captura de la terminal: ejecución exitosa del playbook en server1 y server2](./evidencias/ejecucion-playbook-terminal.png)
