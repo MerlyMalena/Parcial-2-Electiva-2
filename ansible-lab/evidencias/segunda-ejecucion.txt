@@ -1,0 +1,51 @@
+
+PLAY [Configurar el laboratorio Ansible en Docker] *****************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [server1]
+ok: [server2]
+
+TASK [Mostrar el nombre del host] **********************************************
+ok: [server1] => {
+    "msg": "Servidor: server1 | Hostname: fe54cc0bcc94"
+}
+ok: [server2] => {
+    "msg": "Servidor: server2 | Hostname: b3d3dd386323"
+}
+
+TASK [Mostrar el sistema operativo] ********************************************
+ok: [server1] => {
+    "msg": "Sistema operativo: Ubuntu 24.04"
+}
+ok: [server2] => {
+    "msg": "Sistema operativo: Ubuntu 24.04"
+}
+
+TASK [Crear el directorio principal] *******************************************
+ok: [server2]
+ok: [server1]
+
+TASK [Crear info.txt con el servidor y el sistema operativo] *******************
+ok: [server1]
+ok: [server2]
+
+TASK [Crear los subdirectorios mediante un loop] *******************************
+ok: [server1] => (item=logs)
+ok: [server2] => (item=logs)
+ok: [server1] => (item=backup)
+ok: [server2] => (item=backup)
+ok: [server1] => (item=config)
+ok: [server2] => (item=config)
+
+TASK [Mostrar un mensaje solamente en Ubuntu] **********************************
+ok: [server1] => {
+    "msg": "El servidor server1 utiliza Ubuntu."
+}
+ok: [server2] => {
+    "msg": "El servidor server2 utiliza Ubuntu."
+}
+
+PLAY RECAP *********************************************************************
+server1                    : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+server2                    : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
